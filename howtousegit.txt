@@ -1,0 +1,52 @@
+花了半个下午听慕课网中@龙猫所讲的《版本管理工具介绍—Git篇》（http://www.imooc.com/learn/208），整理出如下笔记，共享给大家：
+
+1、svn是集中式版本管理工具，git是分布式。git不等于github。
+
+2、github客户端的安装：
+下载github的客户端
+
+3、注册一个github
+
+4、创建一个新的仓库（new repository）,要付费（用可跨过支付的信用卡、visa卡等）才能创建private的项目，免费的只能创建private项目，勾选创建readme文件选项，可自动创建该文件并在主页中看到其内容
+
+5、从github检出项目到本地
+clone in desktop
+或者用命令行 git clone https://github.com/****/***.git
+
+6、提交到github
+用命令行：
+git status 查看状态，看是否有东西还没提交的
+git add 加入暂存区 
+git commit 进行提交（做完这步后只提交到本地工作区）
+git push 发布（做完这步后就发布到github了）
+
+用windows github客户端：
+在客户端中找到项目文件，右键-〉open in explorer菜单项打开文件，对文件进行修改；
+返回客户端会看到待commit的内容，在右侧勾选要提交的内容，在左侧填写提交的说明信息，然后进行提交；
+点击右上角sync同步按钮将已commit到本地工作区的内容push到github上去。
+
+7、解决冲突
+遇到冲突时先用git pull下载有冲突的内容
+或者直接用github客户端提交时根据提示直接修改代码
+
+8、如何回到过去的代码并返回到最新版本
+git log   可以查看之间都有哪些提交，从中找到过去某个提交的commit id
+载用git reset --hard 某commit id的方式回到该提交之前的版本
+git reflog 可以获得最新的提交的commit id
+用git reset --hard 最新的commit id 就可以回到回到过去之前的那个版本
+9、建立
+里程碑（release）
+release -> draft new release -> publish release 即建立了一个里程碑
+
+10、合并分支（branch）
+
+新建一个branch,发布它
+用客户端的merge功能合并入master主分支中
+
+11、几点用git合作开发的经验：
+多用客户端和工具，少用命令行，除非是在linux服务器上直接开发，因为工具的目的是为了提高效率；
+每次提交前，diff自己的代码，以免提交错误的代码；
+每次下班之前整理好自己的工作区；
+并行的项目,使用分支进行开发；
+遇到冲突时 ,要搞明白冲突的原因,千万不要随意丢弃别人的代码；
+产品发布后,记得打Tag，方便将来拉分支修复bug。
